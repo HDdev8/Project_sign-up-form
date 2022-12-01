@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inconsolata&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script src="./script.js" defer></script> -->
+    <title>Project: Sign-up Form</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <div class="logo">
+          <!-- <img src="./odin.png" id="logo" /> -->
+        </div>
+        <div class="credit">
+          <p id="credit">
+            Photo by
+            <a
+              class="walkator"
+              href="https://unsplash.com/@walkator?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Walkator</a
+            >
+            on
+            <a
+              class="walkator"
+              href="https://unsplash.com/@walkator?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Unsplash</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="top">
+          <p>
+            Are you looking for a web developer? Well, today's your lucky day!
+            Hire me now to get the most amazing web development you've ever
+            seen! Sign up
+            <em>now</em> to get started!
+          </p>
+          <br />
+          <p>You know you want to!</p>
+        </div>
+        <div class="middle">
+          <p id="middle">Let's do this!</p>
+          <form action="#" method="post">
+            <ul>
+              <li>
+                <label for="first-name">First Name:</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  class="input"
+                  placeholder="John"
+                />
+              </li>
+              <li>
+                <label for="last-name">Last Name:</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  class="input"
+                  placeholder="Smith"
+                />
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label for="user-email">Email Address:</label>
+                <input
+                  type="email"
+                  id="user-email"
+                  name="email"
+                  placeholder="you@example.com"
+                  class="input"
+                />
+              </li>
+              <li>
+                <label for="phone-number">Phone Number:</label>
+                <input
+                  type="tel"
+                  id="phone-number"
+                  name="phone-number"
+                  placeholder="555-555-5555"
+                  class="input"
+                />
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <!-- give passwords an error class -->
+                <!-- checking that these match requires javascript -->
+                <label for="user-password">Password:</label>
+                <input
+                  type="password"
+                  id="user-password"
+                  name="password"
+                  class="input"
+                  required
+                />
+              </li>
+              <li>
+                <label for="user-password">Confirm Password:</label>
+                <input
+                  type="password"
+                  id="user-password"
+                  name="password"
+                  class="input"
+                  required
+                />
+              </li>
+            </ul>
+          </form>
+        </div>
+        <div class="bottom">
+          <div class="create-account">
+            <button type="submit" class="submit">Create Account</button>
+          </div>
+          <div class="log-in">
+            <p id="log-in">
+              Already have an account? <a href="#" id="log-in-link">Log in</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
