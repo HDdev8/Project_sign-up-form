@@ -7,139 +7,99 @@
 *::after {
   box-sizing: border-box;
 }
-
 :root {
   --input-border: #8b8a8b51;
   --input-focus-h: 245;
   --input-focus-s: 100%;
   --input-focus-l: 42%;
+  --credit-color: rgba(245, 245, 245, 0.8);
   font-family: "Fira Code", Menlo, Consolas, "Ubuntu Mono", "Roboto Mono",
     "DejaVu Sans Mono", monospace;
+  /* font-family: "Salsa", cursive; */
 }
 body {
-  background-color: black;
   background-image: url(./coding-background.jpg);
   background-repeat: repeat;
 }
-.container {
+div.container {
   width: 100vw;
   height: 100vh;
   display: flex;
 }
-.left-side {
+
+div.left-side {
   display: flex;
   width: 40vw;
   height: 100vh;
-  /* flex-direction: column; */
   align-items: flex-end;
   justify-content: center;
-  resize: both;
   overflow: auto;
-  max-width: 100%;
-  max-height: 100%;
+  position: relative;
 }
-p#credit {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: whitesmoke;
-  font-weight: 500;
-  font-size: 0.75rem;
-}
-a.walkator {
-  color: whitesmoke;
-}
-/* #code-img {
-  width: min(26vw, 100%);
-  height: min(100vh, 100%);
-} */
-#logo {
-  width: min(6rem, 16%);
-  height: min(10rem, 14%);
-  top: 20rem;
-  left: 20rem;
-  position: absolute;
-  padding: 5rem 10rem 5rem 10rem;
-}
-/* .logo {
-  background-color: var(--input-border);
-} */
-.right-side {
+
+div.right-side {
   display: flex;
   flex-direction: column;
   width: 45vw;
   background-color: white;
 }
-div .input,
-#user-password {
-  font-size: 10px;
-  font-size: max(10px, 0.5rem);
+
+input#first-name,
+input#last-name,
+input#phone-number,
+input#user-password,
+input#confirm-password,
+input#user-email {
+  font-size: 0.625rem;
+  font-size: max(0.625rem, 0.5rem);
   font-family: inherit;
   padding: 0.015rem 3rem 0.015rem 0rem;
   background-color: #fff;
-  border: 1px solid var(--input-border);
-  border-radius: 4px;
+  border: 0.0625rem solid var(--input-border);
+  border-radius: 0.25rem;
   line-height: 1;
   height: 1.25rem;
   transition: 180ms box-shadow ease-in-out;
 }
-div .input:focus {
+
+div input.input:invalid {
+  border: #ff3c41;
+  --input-focus-h: 358;
+  --input-focus-s: 100%;
+  --input-focus-l: 26%;
+}
+div input.input:focus {
   border-color: hsl(
     var(--input-focus-h),
     var(--input-focus-s),
     var(--input-focus-l)
   );
-  box-shadow: 0 0 0 1px
+  box-shadow: 0 0 0 0.0625rem
     hsla(
       var(--input-focus-h),
       var(--input-focus-s),
       calc(var(--input-focus-l) + 40%),
       0.8
     );
-  outline: 1px solid transparent;
+  outline: 0.0625rem solid transparent;
 }
-div .input:invalid {
-  border: #ff3c41;
-  --input-focus-h: 358;
-  --input-focus-s: 100%;
-  --input-focus-l: 26%;
-}
-li label {
-  font-size: 10px;
-  font-size: max(10px, 0.5rem);
-  font-family: inherit;
-  display: block;
-  height: 12px;
-  text-transform: uppercase;
-  color: black;
-  font-weight: 500;
-}
-
-div.top p {
-  color: black;
-  font-size: 1rem;
-  font-family: inherit;
-  padding: 1rem 0rem 0rem 1rem;
-}
-p#log-in,
-p#middle {
-  padding-left: 1rem;
-  padding-top: 1rem;
-}
-
-.top,
-.bottom {
+div.top,
+div.bottom {
   display: flex;
   flex-direction: column;
   height: 35vh;
   background-color: #f9fafb;
   padding-left: 1rem;
 }
-.top {
+div.top {
   align-items: flex-start;
   justify-content: flex-end;
   padding-bottom: 3rem;
-  padding-right: 7rem;
+  /* padding-right: 7rem; */
+  padding-right: clamp(0rem, 50%, 7rem);
+  overflow: scroll;
 }
-.middle,
+div.middle,
 form {
   display: flex;
   justify-content: space-evenly;
@@ -148,30 +108,100 @@ form {
   flex-direction: column;
   background-color: white;
   padding-left: 1rem;
+  overflow: scroll;
 }
-.bottom {
+div.middle {
+  box-shadow: inset 0rem 0.0625rem 0.1875rem 0rem #e4e3e3;
+}
+div.bottom {
+  box-shadow: inset 0rem 0.0625rem 0.1875rem 0rem #e4e3e3;
   align-items: flex-start;
   padding-top: 1.5rem;
+  overflow: scroll;
 }
-.create-account {
+div.create-account {
   padding: 0rem 0rem 0rem 1rem;
 }
+div.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  padding: 1rem 0rem 1rem 0rem;
+  top: 17%;
+  width: 40vw;
+  flex: 1;
+}
+img#hd-logo {
+  /* width: clamp(5rem, 50%, 10rem); */
+  /* width: 10rem; */
+  width: clamp(3rem, 50%, 10rem);
+}
+img#monitor {
+  /* width: 7rem; */
+  width: clamp(1rem, 40%, 7rem);
+  margin-right: 1rem;
+}
+
 button {
   background-color: #c24250;
-  border-radius: 7px;
+  border-radius: 0.4375rem;
   font-size: 0.8rem;
   color: white;
-  padding: 8px 35px 8px 35px;
+  padding: 0.5rem 2.1875rem 0.5rem 2.1875rem;
   border: transparent;
   font-family: inherit;
 }
 
+button:hover {
+  background-color: hsl(353, 51%, 55%);
+}
 button:active {
-  background-color: #c24250;
-  box-shadow: 0 1px #666;
-  transform: translateY(1px);
+  background-color: hsl(353, 51%, 45%);
+  box-shadow: 0 0.0625rem #666;
+  transform: translateY(0.0625rem);
+}
+p {
+  font-family: inherit;
+}
+div.top p {
+  color: black;
+  font-size: 1rem;
+  padding: 1rem 0rem 0rem 1rem;
+  overflow: scroll;
+}
+p#log-in,
+p#middle {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+p#credit {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--credit-color);
+  font-size: 0.75rem;
+  font-weight: 100;
 }
 
+ul {
+  display: inline-flex;
+  gap: 2rem;
+}
+li {
+  list-style: none;
+  display: inline;
+  font-family: inherit;
+}
+li label {
+  font-size: 0.625rem;
+  font-size: max(0.625rem, 0.5rem);
+  font-family: inherit;
+  display: block;
+  height: 0.75rem;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 500;
+}
 a {
   text-decoration: none;
   font-family: inherit;
@@ -179,13 +209,6 @@ a {
 a#log-in-link {
   color: #c24250;
 }
-
-li {
-  list-style: none;
-  display: inline;
-  font-family: inherit;
-}
-ul {
-  display: inline-flex;
-  gap: 2rem;
+a.walkator {
+  color: var(--credit-color);
 }
